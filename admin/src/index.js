@@ -37,8 +37,8 @@ export default {
     });
     app.customFields.register({
         name: "multiselect",
-        pluginId: "multiselect", // the custom field is created by a color-picker plugin
-        type: "json", // the color will be stored as a string
+        pluginId: "multiselect", // the custom field is created by a multiselect plugin
+        type: "json", // the selection will be stored as a json
         intlLabel: {
             id: "multiselect.multiselect.label",
             defaultMessage: "Multiselect",
@@ -49,7 +49,7 @@ export default {
         },
         icon: MultiselectIcon, // don't forget to create/import your icon component 
         components: {
-            Input: async () => import( /* webpackChunkName: "input-component" */ "../src/components/Multiselect/MultiselectInput"),
+           Input: async () => import("./components/Multiselect/MultiselectInput"),
         },
         options: {
             // declare options here

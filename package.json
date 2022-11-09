@@ -9,15 +9,17 @@
     "displayName": "Multiselect"
   },
   "dependencies": {
+    "react": "^17.0.2",
     "axios": "^1.1.3",
+    "react-dom": "^17.0.2",
     "multiselect-react-dropdown": "^2.0.25"
+  },
+  "peerDependencies": {
+      "@strapi/strapi": "^4.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/stayyond/strapi-multiselect"
-  },
-  "peerDependencies": {
-    "@strapi/strapi": "^4.0.0"
   },
   "author": {
     "name": "Emily Vinsen",
@@ -33,5 +35,6 @@
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "33debd57010667a3fc5dfa343a673206cfb956e1"
 }

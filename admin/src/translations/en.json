@@ -1,1 +1,6 @@
-{}
+{
+  "multiselect.label": "Multiselect",
+  "multiselect.description": "Select any items",
+  "multiselect.settings": "Settings",
+  "multiselect.input.aria-label": "Multiselect input"
+}

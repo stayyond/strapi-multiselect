@@ -15,7 +15,7 @@ const IconBox = styled(Flex)`
   }
 `;
 
-const ColorPickerIcon = () => {
+const MultiselectIcon = () => {
   return (
     <IconBox justifyContent="center" alignItems="center" width={7} height={6} hasRadius aria-hidden>
       <Icon as={Duplicate} />
@@ -23,4 +23,4 @@ const ColorPickerIcon = () => {
   );
 };
 
-export default ColorPickerIcon;
+export default MultiselectIcon;
