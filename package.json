@@ -1,6 +1,6 @@
 {
   "name": "@stayyond/strapi-multiselect",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A multiselect custom field that pulls the list from an endpoint",
   "strapi": {
     "name": "multiselect",
@@ -17,7 +17,7 @@
     "url": "https://github.com/stayyond/strapi-multiselect"
   },
   "peerDependencies": {
-      "@strapi/strapi": "^4.0.0"
+    "@strapi/strapi": "^4.0.0"
   },
   "author": {
     "name": "Emily Vinsen",
