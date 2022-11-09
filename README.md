@@ -1,3 +1,3 @@
 # Strapi plugin multiselect
 
-A quick description of multiselect.
+A multiselect custom field that pulls the list from an endpoint
