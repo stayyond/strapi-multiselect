@@ -1,7 +1,7 @@
-import { prefixPluginTranslations } from '@strapi/helper-plugin';
+import { prefixPluginTranslations } from "@strapi/helper-plugin";
 // import pluginPkg from '../../package.json';
-import pluginId from './pluginId';
-import MultiselectIcon from './components/Multiselect/MultiselectIcon';
+import pluginId from "./pluginId";
+import MultiselectIcon from "./components/Multiselect/MultiselectIcon";
 
 // const name = pluginPkg.strapi.name;
 
@@ -19,7 +19,7 @@ export default {
         id: "multiselect.multiselect.description",
         defaultMessage: "Select any items",
       },
-      icon: MultiselectIcon, // don't forget to create/import your icon component 
+      icon: MultiselectIcon, // don't forget to create/import your icon component
       components: {
         Input: async () => import("./components/Multiselect/MultiselectInput"),
       },
@@ -34,23 +34,24 @@ export default {
             /*
               Add a "endpoint" url field
             */
-            name: 'endpoint',
+            name: "options.endpoint",
             intlLabel: {
-              id: 'multiselect.multiselect.endpoint.label',
-              defaultMessage: 'Endpoint Url',
+              id: "multiselect.multiselect.endpoint.label",
+              defaultMessage: "Endpoint Url",
             },
             intlDescription: {
               id: "multiselect.multiselect.endpoint.description",
-              defaultMessage: "Enter the endpoint you wish to get the list of options from",
+              defaultMessage:
+                "Enter the endpoint you wish to get the list of options from",
             },
-            type: 'string',
+            type: "string",
           },
         ],
       },
     });
   },
 
-  bootstrap(app) { },
+  bootstrap(app) {},
   async registerTrads({ locales }) {
     const importedTrads = await Promise.all(
       locales.map((locale) => {
