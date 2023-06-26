@@ -1,6 +1,6 @@
 {
   "name": "@stayyond/strapi-multiselect",
-  "version": "1.0.14",
+  "version": "1.0.2",
   "description": "A multiselect custom field that pulls the list from an endpoint",
   "strapi": {
     "name": "multiselect",
