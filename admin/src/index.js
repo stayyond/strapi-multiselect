@@ -36,11 +36,11 @@ export default {
             */
             name: "options.endpoint",
             intlLabel: {
-              id: "multiselect.multiselect.endpoint.label",
+              id: "multiselect.multiselect.options.endpoint.label",
               defaultMessage: "Endpoint Url",
             },
             intlDescription: {
-              id: "multiselect.multiselect.endpoint.description",
+              id: "multiselect.multiselect.options.endpoint.description",
               defaultMessage:
                 "Enter the endpoint you wish to get the list of options from",
             },
