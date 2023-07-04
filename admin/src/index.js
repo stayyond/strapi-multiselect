@@ -8,15 +8,15 @@ import MultiselectIcon from "./components/Multiselect/MultiselectIcon";
 export default {
   register(app) {
     app.customFields.register({
-      name: "multiselect",
+      name: "select",
       pluginId: "multiselect", // the custom field is created by a multiselect plugin
       type: "json", // the selection will be stored as a json
       intlLabel: {
-        id: "multiselect.multiselect.label",
+        id: "multiselect.select.label",
         defaultMessage: "Multiselect",
       },
       intlDescription: {
-        id: "multiselect.multiselect.description",
+        id: "multiselect.select.description",
         defaultMessage: "Select any items",
       },
       icon: MultiselectIcon, // don't forget to create/import your icon component
@@ -32,17 +32,17 @@ export default {
           */
           {
             /*
-              Add a "endpoint" url field
+              Add a "type" url field
             */
-            name: "options.endpoint",
+            name: "options.type",
             intlLabel: {
-              id: "multiselect.multiselect.options.endpoint.label",
-              defaultMessage: "Endpoint Url",
+              id: "multiselect.select.options.type.label",
+              defaultMessage: "Type",
             },
             intlDescription: {
-              id: "multiselect.multiselect.options.endpoint.description",
+              id: "multiselect.select.options.type.description",
               defaultMessage:
-                "Enter the endpoint you wish to get the list of options from",
+                "Enter the type you wish to get the list of options from. \n Options are: amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType",
             },
             type: "string",
           },
