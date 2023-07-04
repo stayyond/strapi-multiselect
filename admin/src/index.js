@@ -32,18 +32,21 @@ export default {
           */
           {
             /*
-              Add a "type" url field
+              Add a "type" string field
             */
             name: "options.type",
             intlLabel: {
               id: "multiselect.select.options.type.label",
-              defaultMessage: "Type",
+              defaultMessage:
+                "Type (amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType)",
             },
             intlDescription: {
               id: "multiselect.select.options.type.description",
               defaultMessage:
                 "Enter the type you wish to get the list of options from. \n Options are: amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType",
             },
+            // description:
+            //   "Enter the type you wish to get the list of options from. Options are: amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType",
             type: "string",
           },
         ],

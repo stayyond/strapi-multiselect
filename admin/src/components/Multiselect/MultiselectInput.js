@@ -19,24 +19,55 @@ export default class MultiselectInput extends React.Component {
     list: [],
   };
 
-  componentDidMount() {
-    let url = this.props.attribute.type;
-    console.log("attribute", this.props.attribute);
-    if (url) {
-      axios
-        .get(url)
-        .then((res) => {
-          let list = null;
-          if (res?.data?.attributes) {
-            let obj = res.data.attributes;
-            list = Object.keys(obj).find((key) => typeof value == array);
-          } else if (res.data?.results) {
-            list = res.data?.results;
+  async componentDidMount() {
+    let type = this.props.attribute?.options?.type;
+    if (type) {
+      // type is lists.list-with-gds-code so needs extra field
+      let gds = ["bedSize", "bookableView", "bookableType"].includes(type)
+        ? "gdsCode"
+        : "";
+      let query = `query {
+                list {
+                    data {
+                        attributes {
+                                ${type} (sort: "name:desc", pagination: { limit: 1000 }) {
+                                    name
+                                    id
+                                    icon
+                                    ${gds}
+                                }
+                            }
+                        }
+                    }
+                }`;
+      await axios({
+        url: `https://admin.yond.site/graphql`,
+        method: "post",
+        proxy: false,
+        data: {
+          query: query,
+        },
+      })
+        .then(({ data, status }) => {
+          console.log(data);
+          if (
+            status == 200 &&
+            data?.data?.list?.data?.attributes &&
+            data?.data?.list?.data?.attributes[type]
+          ) {
+            let list = data.data.list.data.attributes[type];
+            console.log(list);
+            //   let list = null;
+            //   if (res?.data?.attributes) {
+            //     let obj = res.data.attributes;
+            //     list = Object.keys(obj).find((key) => typeof value == array);
+            //   } else if (res.data?.results) {
+            //     list = res.data?.results;
+            //   }
+            this.setState({ list });
           }
-          console.log("list", list);
-          this.setState({ list });
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.error("multiselect error", e));
     }
   }
 
@@ -86,9 +117,9 @@ export default class MultiselectInput extends React.Component {
               : "Field"}
           </FieldLabel>
           <Multiselect
-            v-if={this.state && this.state.list}
+            v-if={this.state && this.state.list && this.state.list.length > 0}
             options={this.state.list} // Options to display in the dropdown
-            displayValue="type" // Property name to display in the dropdown options
+            displayValue="name" // Property name to display in the dropdown options
             selectedValues={preselect}
             onSelect={handleChange} // Function will trigger on select event
             onRemove={handleChange} // Function will trigger on remove event
