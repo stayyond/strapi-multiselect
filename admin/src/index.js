@@ -43,7 +43,7 @@ export default {
             intlDescription: {
               id: "multiselect.select.options.type.description",
               defaultMessage:
-                "Enter the type you wish to get the list of options from. \n Options are: amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType",
+                "Enter the type you wish to get the list of options from. \n Options are found on the lists page",
             },
             // description:
             //   "Enter the type you wish to get the list of options from. Options are: amenities, keyHighlight, propertyStyle, bookableHighlight, bedSize, bookableView, bookableType",
